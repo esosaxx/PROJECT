@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-10-26T16:53:12.559Z",
+    "end": "2023-10-26T16:53:40.803Z",
+    "duration": 28244,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "191ab96d-9bb1-459a-8c93-7819a21a1652",
+      "title": "",
+      "fullFile": "cypress/e2e/UI/UI/registration.cy.js",
+      "file": "cypress/e2e/UI/UI/registration.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "95f8a2ae-d7cb-42d4-b8cb-c625a665485c",
+          "title": "Registration Collection",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify successful registration with valid user details",
+              "fullTitle": "Registration Collection Verify successful registration with valid user details",
+              "timedOut": null,
+              "duration": 9954,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://ecommerce-playground.lambdatest.io/');\ncy.contains('Register').click({\n  force: true\n});\ncy.get('#input-firstname').type('esosa');\ncy.get('#input-lastname').type('oghagbon');\ncy.get('#input-email').type('esosa6@gmail.com');\ncy.get('#input-telephone').type('07379032721');\ncy.get('#input-password').type('password1');\ncy.get('#input-confirm').type('password1');\ncy.get('.custom-checkbox').click();\ncy.contains('Continue').click();\n//Assertions\ncy.contains('Congratulations! Your new account has been successfully created!').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Congratulations! Your new account has been successfully created!' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Congratulations! Your new account has been successfully created!' but never did.\n    at Context.eval (webpack://project/./cypress/e2e/UI/UI/registration.cy.js:23:84)",
+                "diff": null
+              },
+              "uuid": "d6667fdc-353e-4cf2-b38a-18d84c46c4f1",
+              "parentUUID": "95f8a2ae-d7cb-42d4-b8cb-c625a665485c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify unsuccessful registration with previously used email",
+              "fullTitle": "Registration Collection Verify unsuccessful registration with previously used email",
+              "timedOut": null,
+              "duration": 4478,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://ecommerce-playground.lambdatest.io/');\ncy.contains('Register').click({\n  force: true\n});\ncy.get('#input-firstname').type('esosa');\ncy.get('#input-lastname').type('oghagbon');\ncy.get('#input-email').type('esosa6@gmail.com');\ncy.get('#input-telephone').type('07379032721');\ncy.get('#input-password').type('password1');\ncy.get('#input-confirm').type('password1');\ncy.get('.custom-checkbox').click();\ncy.contains('Continue').click();\n//Assertions\ncy.contains('Warning: E-Mail Address is already registered!').should('be.visible');",
+              "err": {},
+              "uuid": "e879882b-9a2f-44ec-8415-f6dd843c29ec",
+              "parentUUID": "95f8a2ae-d7cb-42d4-b8cb-c625a665485c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify unsuccessful registration with no fields inputed",
+              "fullTitle": "Registration Collection Verify unsuccessful registration with no fields inputed",
+              "timedOut": null,
+              "duration": 4579,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Continue').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Continue' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Continue' but never did.\n    at Context.eval (webpack://project/./cypress/e2e/UI/UI/registration.cy.js:43:7)",
+                "diff": null
+              },
+              "uuid": "b8163166-2ad1-43f0-bbac-dd4f32a508e3",
+              "parentUUID": "95f8a2ae-d7cb-42d4-b8cb-c625a665485c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e879882b-9a2f-44ec-8415-f6dd843c29ec"
+          ],
+          "failures": [
+            "d6667fdc-353e-4cf2-b38a-18d84c46c4f1",
+            "b8163166-2ad1-43f0-bbac-dd4f32a508e3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 19011,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
