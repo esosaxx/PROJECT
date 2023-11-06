@@ -4,7 +4,7 @@ describe('Verifies search results are displayed correctly', () => {
         cy.login();
          })
 
-    it('Searches for the text "Apple" and displays results', () => {
+    it('Searches for the product "Apple" and displays results', () => {
         cy.get('[name="search"]').eq(0).type('Apple')
         cy.get('.type-text').click()
            // Verify search results
@@ -12,7 +12,7 @@ describe('Verifies search results are displayed correctly', () => {
         cy.contains('Search - Apple').should('be.visible')
         cy.get('.product-layout').should('have.length.gt', 0)
          });
-    it('Searches for the text "Nokia" and displays results', () => {
+    it('Searches for the product "Nokia" and displays results', () => {
         cy.visit(Cypress.env('url'));
             cy.get('[name="search"]').eq(0).type('Nokia')
             cy.get('.type-text').click()
@@ -21,7 +21,7 @@ describe('Verifies search results are displayed correctly', () => {
             cy.contains('Search - Nokia').should('be.visible')
             cy.get('.product-layout').should('have.length.gt', 0)
     });
-    it('Searches for the text "Samsung" and displays results', () => {
+    it('Searches for the product "Samsung" and displays results', () => {
         cy.visit(Cypress.env('url'));
         cy.get('[name="search"]').eq(0).type('Samsung')
         cy.get('.type-text').click()
@@ -37,6 +37,7 @@ describe('Verifies search results are displayed correctly', () => {
         cy.get('.type-text').click()
            // Verify message for no search results
         cy.contains('There is no product that matches the search criteria.').should('be.visible');
+        
     })
     it('Displays message with no search results for invalid search term', () => {
             // Enter search term that returns no results and submit 
@@ -45,5 +46,6 @@ describe('Verifies search results are displayed correctly', () => {
         cy.get('.type-text').click()
             // Verify message for no search results
         cy.contains('There is no product that matches the search criteria.').should('be.visible');
+
     })
 })

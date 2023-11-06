@@ -22,8 +22,8 @@ it('Verifies successful checkout with valid details in mandatory fields', () => 
     cy.get('#input-payment-address-1').type('26 Hawthorne Road');
     cy.get('#input-payment-city').type('London');
     cy.get('#input-payment-postcode').type('BR1 4JW');
+    cy.get('.custom-control-input').click();
     cy.get('.custom-checkbox').eq(4).click();
-    cy.get('#button-save').click();
 
 cy.contains('Total').should('be.visible');
 cy.contains('Product Name').should('be.visible');
